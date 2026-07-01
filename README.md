@@ -2,15 +2,13 @@
 
 > A practical reference for building scalable Python SaaS applications using Domain-Driven Design (DDD), Hexagonal Architecture, and a Modular Monolith.
 
-## Why this repository?
+## Why I Created This Repository
 
-As I progressed from WordPress development into backend engineering, I realized that building software is not just about writing code—it is about organizing complexity.
+I've had the opportunity to apply Domain-Driven Design, Hexagonal Architecture, and Modular Monolith principles while working on a commercial SaaS application.
 
-This repository is my personal knowledge base and reference implementation for the architectural patterns used in modern SaaS applications. It documents the concepts I've learned from studying industry-recognized architecture practices and applying them to real-world software projects.
+Because that codebase is proprietary, I cannot share its implementation publicly.
 
-The goal is not to build another framework.
-
-The goal is to understand **why large SaaS systems are structured the way they are.**
+This repository is an independent reference where I document the architectural patterns, design decisions, and implementation approaches I've learned. All examples are generic and intentionally exclude proprietary business logic, domain models, and company-specific code.
 
 ---
 
