@@ -1,0 +1,88 @@
+title Message Flow & AI Workflow
+direction right
+
+Customer [icon: user]
+
+Channels [color: blue] {
+  Channel Provider [icon: message-circle]
+  WhatsApp • Email • Messenger • Instagram
+}
+
+EventBus [icon: radio, color: orange]
+
+Inbox [color: green] {
+  Inbox_3 [icon: inbox, label: Inbox]
+  Persist Message
+  Create / Update Conversation
+}
+
+EventBus_1 [icon: radio, color: orange, label: EventBus]
+
+AI [color: blue] {
+  AI Agent Context [icon: sparkles]
+  Listen MessageEvent
+  Retrieve Context
+  Generate Reply
+  Make Decision
+}
+
+Knowledge [icon: book-open, color: purple]
+
+Decision [shape: diamond]
+Auto Reply [shape: oval, color: green]
+Suggestion [shape: oval, color: yellow]
+No Reply [shape: oval, color: gray]
+
+
+Suggestion_1 [color: blue, label: Suggestion] {
+  Frontend
+  Show Suggested Reply
+  Confidence
+}
+
+Human [color: orange] {
+  User
+  Review / Edit
+  Send
+}
+
+
+NoReply [color: gray] {
+  Frontend
+  Show:
+  • No Reply Needed
+}
+
+
+Delivered [icon: check-circle]
+EventBus_1_1 [label: EventBus, color: orange, icon: radio]
+Frontend_2 [color: blue, label: Frontend] {
+  Composer UI
+}
+EventBus_1_2 [label: EventBus, color: orange, icon: radio]
+Recieved [icon: check-circle]
+
+Customer > Recieved
+Channels > EventBus: MessageReceived
+EventBus_1 > AI Agent Context
+
+Retrieve Context > Knowledge: Retrieve Context
+
+AI Agent Context > Decision
+
+Decision > Auto Reply
+Decision > Suggestion
+Decision > No Reply
+
+
+Suggestion > Frontend_2
+Suggestion_1 > Human
+NoReply < Frontend_2
+
+No Reply > Frontend_2
+EventBus > Inbox
+Inbox > EventBus_1
+Human > Inbox
+Channels < Recieved
+Delivered < Channels
+Auto Reply > Inbox: [color: black]
